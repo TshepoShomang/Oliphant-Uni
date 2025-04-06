@@ -15,7 +15,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <li class="current"><a href="#">Home</a></li>
+                        <li class="current"><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('service') }}">Our Service</a></li>
                         <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
                         <li><a href="{{ url_for('director') }}">Company Director</a></li>
@@ -29,6 +29,9 @@
         <section id="showcase">
             <div class="container">
                 <h1>Welcome To Oliphant's University Appication Service</h1>
+                <a href="{{ url_for('application') }}">
+                    <button class="showcase-btn">Get Started</button>
+                </a>
             </div>
         </section>
         <section class="info-section">

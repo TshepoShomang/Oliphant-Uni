@@ -84,7 +84,7 @@ header a:hover{
 }
 
 #showcase{
-    min-height: 400px;
+    min-height: 600px;
     background: url("./img/back.jpg") no-repeat 0 -400px;
     background-size: cover;
     text-align: center;
@@ -98,6 +98,23 @@ header a:hover{
 }
 #showcase p{
     font-size: 20px;
+}
+
+.showcase-btn{
+    text-decoration: none;
+    color: #005792;
+    border: 3px solid #005792;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: transparent;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.showcase-btn:hover{
+    color: #f4f4f4;
+    background-color: #005792;
 }
 
 
@@ -421,6 +438,50 @@ h3{
     color: #555;
     margin: 4px 0;
 }
+
+.contact-details-section {
+    max-width: 700px;
+    margin: 60px auto;
+    background-color: #f8f9fa;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.contact-details-section h1 {
+    color: #005792;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-details-section p,
+.contact-details-section h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.contact-details-section ol {
+    margin-left: 20px;
+}
+
+.contact-details-section li {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.contact-details-section a {
+    color: #005792;
+    text-decoration: none;
+}
+
+.contact-details-section a:hover {
+    text-decoration: underline;
+}
+
+
+
 
 
 @media(max-width: 768px){

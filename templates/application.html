@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Send Your Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <H1><span class="highlight">Oliphant's</span>Uni Application</H1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('service') }}">Our Service</a></li>
+                    <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                    <li><a href="{{ url_for('director') }}">Company Director</a></li>
+                    <li><a href="{{ url_for('whyUs') }}">Why Us</a></li>
+                    <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="contact-details-section">
+        <h1>Contact Us - Submit Your Application</h1>
+        
+        <p>If you're ready to submit your application, please follow the instructions below:</p>
+        
+        <h3>Instructions for Submitting Your Application:</h3>
+        <ol>
+            <li>Prepare your application document (including personal details, academic information, and any supporting documents).</li>
+            <li>Write a brief cover letter (if applicable) explaining why you're interested in applying and what you're seeking from the program.</li>
+            <li>Send the completed application to our email: <strong>contact@universityservices.com</strong></li>
+            <li>Ensure you include the following information in the subject line of your email: <strong>"Application for University Services for - Your Full Name"</strong></li>
+            <li>After submitting, wait for a confirmation email from us within 2-3 business days.</li>
+        </ol>
+
+        <h3>Contact Information:</h3>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:contact@universityservices.com">contact@universityservices.com</a></li>
+            <li><strong>Phone:</strong> +27 72 915 7597</li>
+            <li><strong>Address:</strong> 966 Tumellano Street, Dube, Johannesburg</li>
+        </ul>
+
+        <h3>Business Hours:</h3>
+        <ul>
+            <li><strong>Monday to Friday:</strong> 9:00 AM - 6:00 PM</li>
+            <li><strong>Saturday:</strong> 10:00 AM - 2:00 PM</li>
+            <li><strong>Sunday:</strong> Closed</li>
+        </ul>
+    </section>
+</body>
+</html>

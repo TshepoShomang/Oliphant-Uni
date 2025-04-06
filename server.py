@@ -30,7 +30,9 @@ def service():
 def whyUs():
     return render_template("whyUs.html")
 
-
+@app.route("/application")
+def application():
+    return render_template("application.html")
 
 
 if __name__ == "__main__":
