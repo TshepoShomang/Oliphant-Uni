@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contributors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <H1><span class="highlight">Oliphant's</span>Uni Application</H1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('service') }}">Our Service</a></li>
+                    <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                    <li><a href="{{ url_for('director') }}">Company Director</a></li>
+                    <li><a href="{{ url_for('whyUs') }}">Why Us</a></li>
+                    <li class="current"><a href="{{ url_for('contributors') }}">Contributors</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="contributors-section">
+        <h1>Project Contributors</h1>
+        <p class="intro">
+            This project was made possible thanks to the dedication, skills, and passion of a talented team committed to empowering students with access to higher education.
+        </p>
+
+        <div class="contributors-list">
+            <div class="contributor-card">
+                <img src="{{ url_for('static', filename='./img/dokotela.jpg') }}" alt="Director">
+                <h3>Mr. Zolile Oliphant Beauchamp</h3>
+                <p>Founder & Director</p>
+                <p>Led the vision and strategic development of the university application services.</p>
+            </div>
+
+            <div class="contributor-card">
+                <img src="{{ url_for('static', filename='img/dokotela.jpg') }}" alt="Contributor 1">
+                <h3>Mr. Zolile Oliphant Beauchamp</h3>
+                <p>Web Developer</p>
+                <p>Designed and developed the website, ensuring smooth navigation and user experience.</p>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>

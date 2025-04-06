@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Why Choose Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <H1><span class="highlight">Oliphant's</span>Uni Application</H1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('service') }}">Our Service</a></li>
+                    <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                    <li><a href="{{ url_for('director') }}">Company Director</a></li>
+                    <li class="current"><a href="{{ url_for('whyUs') }}">Why Us</a></li>
+                    <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="why-us-section">
+        <h1>Why Choose Us</h1>
+
+        <p class="intro">
+            We understand that applying to university can be overwhelming. That’s why we’re here — to make your journey easier, smoother, and more successful. Here's why so many learners trust us with their university applications.
+        </p>
+
+        <div class="why-us-list">
+            <div class="why-card">
+                <h2>Personalized Support</h2>
+                <p>Every learner is different. We take the time to understand your goals, strengths, and preferences so we can guide you effectively through your unique journey.</p>
+            </div>
+
+            <div class="why-card">
+                <h2>Experienced Guidance</h2>
+                <p>With years of experience helping students apply to top universities, we know what institutions are looking for and how to present your best self.</p>
+            </div>
+
+            <div class="why-card">
+                <h2>Save Time & Reduce Stress</h2>
+                <p>Our process is structured and efficient, helping you meet deadlines, gather documents, and complete your applications without the usual last-minute panic.</p>
+            </div>
+
+            <div class="why-card">
+                <h2>Affordable, Transparent Pricing</h2>
+                <p>We offer fair, flexible pricing with no hidden fees. Choose a package based on the number of institutions, and only pay for what you need.</p>
+            </div>
+
+            <div class="why-card">
+                <h2>Proven Results</h2>
+                <p>Our students have successfully gained admission to institutions across South Africa. Your success is our priority.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

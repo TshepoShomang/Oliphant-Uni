@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <H1><span class="highlight">Oliphant's</span>Uni Application</H1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li class="current"><a href="{{ url_for('service') }}">Our Service</a></li>
+                    <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                    <li><a href="{{ url_for('director') }}">Company Director</a></li>
+                    <li><a href="{{ url_for('whyUs') }}">Why Us</a></li>
+                    <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="services-section">
+        <h1>University Application Services</h1>
+        <p class="intro">
+            We offer dedicated support to learners at different stages of their journey—whether you're in Grade 12, taking a gap year, or upgrading. Our goal is to help you submit a strong, successful university application with confidence.
+        </p>
+
+        <div class="service">
+            <h2>Grade 12 Application Support</h2>
+            <p>We guide Grade 12 learners through every step of the application process—from selecting programs and preparing personal statements to submitting applications and following up with institutions.</p>
+        </div>
+
+        <div class="service">
+            <h2>Gap Year Guidance</h2>
+            <p>If you're taking a gap year, we help you make the most of your time by offering structured planning, recommendations for meaningful activities, and preparation for the next intake cycle.</p>
+        </div>
+
+        <div class="service">
+            <h2>Upgrading Assistance</h2>
+            <p>Upgrading your marks? We'll help you align your efforts with university requirements, manage your timelines, and submit applications that reflect your improved performance and readiness.</p>
+        </div>
+
+    </section>
+</body>
+</html>

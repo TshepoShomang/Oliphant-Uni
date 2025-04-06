@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pricing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <H1><span class="highlight">Oliphant's</span>Uni Application</H1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('service') }}">Our Service</a></li>
+                    <li class="current"><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                    <li><a href="{{ url_for('director') }}">Company Director</a></li>
+                    <li><a href="{{ url_for('whyUs') }}">Why Us</a></li>
+                    <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="pricing-section">
+        <h1>Pricing</h1>
+        <p class="intro">
+            Our pricing is flexible and based on the number of institutions you want to apply to. Whether you're applying to just one or several universities, we have a package for you.
+        </p>
+
+        <div class="pricing-table">
+            <div class="price-card">
+                <h2>🟢 3 Institution</h2>
+                <p class="price">R250</p>
+                <p>Includes personalized support with one application, document preparation, and submission.</p>
+            </div>
+
+            <div class="price-card">
+                <h2>🔵 5 Institutions</h2>
+                <p class="price">R400</p>
+                <p>Support for up to 3 applications, including document review and guidance for each submission.</p>
+            </div>
+
+            <div class="price-card">
+                <h2>🟣 8 Institutions</h2>
+                <p class="price">R600</p>
+                <p>Comprehensive support for multiple applications, including tailored advice and submission tracking.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

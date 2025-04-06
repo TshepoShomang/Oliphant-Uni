@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meet the Director</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <H1><span class="highlight">Oliphant's</span>Uni Application</H1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('service') }}">Our Service</a></li>
+                    <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                    <li class="current"><a href="{{ url_for('director') }}">Company Director</a></li>
+                    <li><a href="{{ url_for('whyUs') }}">Why Us</a></li>
+                    <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="director-section">
+        <h1>Meet Our Director</h1>
+
+        <div class="director-content">
+            <div class="director-image">
+                <img src="{{ url_for('static', filename='./img/dokotela.jpg') }}" alt="Company Director">
+            </div>
+            <div class="director-bio">
+                <h2>Mr. Zolile Oliphant Beauchamp</h2>
+                <p>
+                    Mr. Zolile Oliphant Beauchamp is the visionary founder and director of our University Application Services company.
+                    With a passion for education and years of experience in academic support, he has helped countless students
+                    gain admission into top institutions across the country.
+                </p>
+                <p>
+                    His mission is to bridge the gap between learners and their dream universities by providing personalised,
+                    affordable, and results-driven support throughout the application process. Whether you're in Grade 12,
+                    taking a gap year, or upgrading, Mr. Beauchamp is committed to seeing you succeed.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

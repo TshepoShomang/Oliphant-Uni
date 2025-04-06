@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf=8">
+        <meta name="viewport"content="width=device width">
+        <title>Oliphant's Application | Welcome</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <H1><span class="highlight">Oliphant's</span>Uni Application</H1>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="current"><a href="#">Home</a></li>
+                        <li><a href="{{ url_for('service') }}">Our Service</a></li>
+                        <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                        <li><a href="{{ url_for('director') }}">Company Director</a></li>
+                        <li><a href="{{ url_for('whyUs') }}">Why Us</a></li>
+                        <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id="showcase">
+            <div class="container">
+                <h1>Welcome To Oliphant's University Appication Service</h1>
+            </div>
+        </section>
+        <section class="info-section">
+            <h3>University Application Services</h3>
+            <p>
+                Our University Application Services are tailored to assist learners who are currently in grade 12, those who have completed their schooling, or individuals who are taking a gap year or upgrading their qualifications.
+                We provide personalized guidance throughout the entire application process—from choosing programs and preparing documents to submitting applications and tracking progress.
+                Whether you are applying for the first time or reapplying after upgrading, we ensure your application reflects your potential and goals.
+            </p>
+        </section>
+    </body>
+</html>
