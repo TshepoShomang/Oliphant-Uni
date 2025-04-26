@@ -4,15 +4,15 @@ from firebase_admin import credentials, firestore
 import os
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = os.getenv('SECRET_KEY')
 
-cred = credentials.Certificate("data.json")
+cred = credentials.Certificate(r"C:\Users\Tshepo\Downloads\Tshepo\Things\data\data.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 
-ADMIN_USERNAME = 'DokoelaBu'
-ADMIN_PASSWORD = 'Player$Bu'
+ADMIN_USERNAME = os.getenv('USER_NAME')
+ADMIN_PASSWORD = os.getenv('PASSWORD')
 
 @app.route("/")
 def home():
