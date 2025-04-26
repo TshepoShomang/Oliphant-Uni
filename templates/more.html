@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>University Application Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">University Application Form</h2>
+        <form method="POST" action="{{ url_for('application', id_number=id_number) }}" enctype="multipart/form-data" class="row g-3">
+
+            <!-- Institution Choices -->
+            <div class="col-md-4">
+                <label for="institution1" class="form-label">First Choice Institution</label>
+                <select class="form-select" id="institution1" name="institution1" required>
+                    <option value="">Select Institution</option>
+                    <option>University of Cape Town (UCT)</option>
+                    <option>University of the Witwatersrand (Wits)</option>
+                    <option>University of Pretoria (UP)</option>
+                    <option>Stellenbosch University (SU)</option>
+                    <option>University of KwaZulu-Natal (UKZN)</option>
+                    <option>University of Johannesburg (UJ)</option>
+                    <option>North-West University (NWU)</option>
+                    <option>Rhodes University</option>
+                    <option>University of the Western Cape (UWC)</option>
+                    <option>University of the Free State (UFS)</option>
+                    <option>Nelson Mandela University (NMU)</option>
+                    <option>University of Limpopo (UL)</option>
+                    <option>Walter Sisulu University (WSU)</option>
+                    <option>University of Venda (Univen)</option>
+                    <option>University of Fort Hare (UFH)</option>
+                    <option>Durban University of Technology (DUT)</option>
+                    <option>Cape Peninsula University of Technology (CPUT)</option>
+                    <option>Central University of Technology (CUT)</option>
+                    <option>Mangosuthu University of Technology (MUT)</option>
+                    <option>Vaal University of Technology (VUT)</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="institution2" class="form-label">Second Choice Institution</label>
+                <select class="form-select" id="institution2" name="institution2">
+                    <option value="">Select Institution</option>
+                    <!-- Same list as above -->
+                    <!-- Copy options here -->
+                    <option>University of Cape Town (UCT)</option>
+                    <option>University of the Witwatersrand (Wits)</option>
+                    <option>University of Pretoria (UP)</option>
+                    <option>Stellenbosch University (SU)</option>
+                    <option>University of KwaZulu-Natal (UKZN)</option>
+                    <option>University of Johannesburg (UJ)</option>
+                    <option>North-West University (NWU)</option>
+                    <option>Rhodes University</option>
+                    <option>University of the Western Cape (UWC)</option>
+                    <option>University of the Free State (UFS)</option>
+                    <option>Nelson Mandela University (NMU)</option>
+                    <option>University of Limpopo (UL)</option>
+                    <option>Walter Sisulu University (WSU)</option>
+                    <option>University of Venda (Univen)</option>
+                    <option>University of Fort Hare (UFH)</option>
+                    <option>Durban University of Technology (DUT)</option>
+                    <option>Cape Peninsula University of Technology (CPUT)</option>
+                    <option>Central University of Technology (CUT)</option>
+                    <option>Mangosuthu University of Technology (MUT)</option>
+                    <option>Vaal University of Technology (VUT)</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="institution3" class="form-label">Third Choice Institution</label>
+                <select class="form-select" id="institution3" name="institution3">
+                    <option value="">Select Institution</option>
+                    <!-- Same options -->
+                    <option>University of Cape Town (UCT)</option>
+                    <option>University of the Witwatersrand (Wits)</option>
+                    <option>University of Pretoria (UP)</option>
+                    <option>Stellenbosch University (SU)</option>
+                    <option>University of KwaZulu-Natal (UKZN)</option>
+                    <option>University of Johannesburg (UJ)</option>
+                    <option>North-West University (NWU)</option>
+                    <option>Rhodes University</option>
+                    <option>University of the Western Cape (UWC)</option>
+                    <option>University of the Free State (UFS)</option>
+                    <option>Nelson Mandela University (NMU)</option>
+                    <option>University of Limpopo (UL)</option>
+                    <option>Walter Sisulu University (WSU)</option>
+                    <option>University of Venda (Univen)</option>
+                    <option>University of Fort Hare (UFH)</option>
+                    <option>Durban University of Technology (DUT)</option>
+                    <option>Cape Peninsula University of Technology (CPUT)</option>
+                    <option>Central University of Technology (CUT)</option>
+                    <option>Mangosuthu University of Technology (MUT)</option>
+                    <option>Vaal University of Technology (VUT)</option>
+                </select>
+            </div>
+
+            <!-- Course Choices -->
+            <div class="col-md-4">
+                <label for="course1" class="form-label">First Choice Course</label>
+                <input type="text" class="form-control" id="course1" name="course1" required>
+            </div>
+
+            <div class="col-md-4">
+                <label for="course2" class="form-label">Second Choice Course</label>
+                <input type="text" class="form-control" id="course2" name="course2">
+            </div>
+
+            <div class="col-md-4">
+                <label for="course3" class="form-label">Third Choice Course</label>
+                <input type="text" class="form-control" id="course3" name="course3">
+            </div>
+
+            <!-- File Uploads -->
+            <div class="col-md-6">
+                <label for="id_document" class="form-label">ID Document</label>
+                <input class="form-control" type="file" id="id_document" name="id_document" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="cover_letter" class="form-label">Cover Letter (Optional)</label>
+                <input class="form-control" type="file" id="cover_letter" name="cover_letter">
+            </div>
+
+            <div class="col-md-12">
+                <label for="latest_report" class="form-label">Latest Report / Matric Certificate</label>
+                <input class="form-control" type="file" id="latest_report" name="latest_report" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-12 d-flex justify-content-center">
+                <button type="submit" class="btn btn-success mt-4 px-5">Submit Application</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

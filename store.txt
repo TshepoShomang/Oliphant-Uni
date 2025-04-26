@@ -1,0 +1,74 @@
+@app.route("/submit_info", methods=["POST"])
+def submit():
+    id_number = request.form['id_number']
+    personal_data = {
+        'id_number': id_number,
+        'title': request.form['title'],
+        'dob': request.form['dob'],
+        'gender': request.form['gender'],
+        'initials': request.form['initials'],
+        'name': request.form['name'],
+        'last_name': request.form['last_name'],
+        'email': request.form['email'],
+        'address': request.form['address'],
+        'phone': request.form['phone'],
+        'marital_status': request.form['marital_status'],
+        'home_language': request.form['home_language'],
+        'ethnic_group': request.form['ethnic_group'],
+        'employed': request.form['employed'],
+        'apply_residence': request.form['apply_residence'],
+        'disability': request.form['disability'],
+    }
+    db.collection('applications').document(id_number).set(personal_data)
+    
+    return redirect(url_for('application', id_number=id_number))
+
+
+
+@app.route('/application/<id_number>')
+def application(id_number):
+     
+    # Get form data
+    application_data = {
+        'institution_choices': {
+            'first_choice': request.form['institution1'],
+            'second_choice': request.form['institution2'],
+            'third_choice': request.form['institution3'],
+        },
+        'course_choices': {
+            'first_choice': request.form['course1'],
+            'second_choice': request.form['course2'],
+            'third_choice': request.form['course3'],
+        }
+    }
+
+    # Handle file uploads
+    files = {}
+    if 'id_document' in request.files:
+        id_file = request.files['id_document']
+        if id_file.filename != '':
+            id_path = os.path.join(app.config['UPLOAD_FOLDER'], id_file.filename)
+            id_file.save(id_path)
+            files['id_document'] = id_path
+
+    if 'cover_letter' in request.files:
+        cover_letter = request.files['cover_letter']
+        if cover_letter.filename != '':
+            cover_letter_path = os.path.join(app.config['UPLOAD_FOLDER'], cover_letter.filename)
+            cover_letter.save(cover_letter_path)
+            files['cover_letter'] = cover_letter_path
+
+    if 'latest_report' in request.files:
+        report_file = request.files['latest_report']
+        if report_file.filename != '':
+            report_path = os.path.join(app.config['UPLOAD_FOLDER'], report_file.filename)
+            report_file.save(report_path)
+            files['latest_report'] = report_path
+
+    # Update Firestore document: merge application data into same document
+    db.collection('applications').document(id_number).update({
+        'application_data': application_data,
+        'files': files
+    })
+
+    return 'Application submitted successfully! ✅'

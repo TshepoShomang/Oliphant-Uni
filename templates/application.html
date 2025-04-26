@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact Us - Send Your Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -32,11 +33,234 @@
         <ol>
             <li>Prepare your application document (including personal details, academic information, and any supporting documents).</li>
             <li>Write a brief cover letter (if applicable) explaining why you're interested in applying and what you're seeking from the program.</li>
-            <li>Send the completed application to our email: <strong>contact@universityservices.com</strong></li>
-            <li>Ensure you include the following information in the subject line of your email: <strong>"Application for University Services for - Your Full Name"</strong></li>
             <li>After submitting, wait for a confirmation email from us within 2-3 business days.</li>
         </ol>
 
+        <div class="container mt-5">
+            <h2 class="mb-4 text-center">Registration Form</h2>
+            <form method="POST" action="{{ url_for('submit_application') }}" enctype="multipart/form-data">
+                <h2 class="mb-4">Personal Information</h2>
+              
+                <div class="row mb-3">
+                  <div class="col">
+                    <label for="id_number" class="form-label">ID Number</label>
+                    <input type="text" class="form-control" id="id_number" name="id_number" required>
+                  </div>
+                  <div class="col">
+                    <label for="title" class="form-label">Title</label>
+                    <select class="form-select" id="title" name="title" required>
+                      <option value="">Choose...</option>
+                      <option>Mr</option>
+                      <option>Ms</option>
+                      <option>Mrs</option>
+                      <option>Dr</option>
+                    </select>
+                  </div>
+                </div>
+              
+                <div class="row mb-3">
+                  <div class="col">
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                  </div>
+                  <div class="col">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender" name="gender" required>
+                      <option value="">Choose...</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="initials" class="form-label">Initials</label>
+                  <input type="text" class="form-control" id="initials" name="initials" required>
+                </div>
+              
+                <div class="row mb-3">
+                  <div class="col">
+                    <label for="name" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                  </div>
+                  <div class="col">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" required>
+                  </div>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="address" class="form-label">Home Address</label>
+                  <input type="text" class="form-control" id="address" name="address" required>
+                </div>
+              
+                <div class="row mb-3">
+                  <div class="col">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phone" name="phone" required>
+                  </div>
+                  <div class="col">
+                    <label for="marital_status" class="form-label">Marital Status</label>
+                    <input type="text" class="form-control" id="marital_status" name="marital_status" required>
+                  </div>
+                </div>
+              
+                <div class="row mb-3">
+                  <div class="col">
+                    <label for="home_language" class="form-label">Home Language</label>
+                    <input type="text" class="form-control" id="home_language" name="home_language" required>
+                  </div>
+                  <div class="col">
+                    <label for="ethnic_group" class="form-label">Ethnic Group</label>
+                    <select class="form-select" id="ethnic_group" name="ethnic_group" required>
+                      <option value="">Choose...</option>
+                      <option>Black</option>
+                      <option>Coloured</option>
+                      <option>Indian</option>
+                      <option>White</option>
+                    </select>
+                  </div>
+                </div>
+              
+                <div class="row mb-3">
+                  <div class="col">
+                    <label for="employed" class="form-label">Are you employed?</label>
+                    <select class="form-select" id="employed" name="employed" required>
+                      <option value="">Choose...</option>
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <label for="apply_residence" class="form-label">Apply for Residence?</label>
+                    <select class="form-select" id="apply_residence" name="apply_residence" required>
+                      <option value="">Choose...</option>
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                </div>
+              
+                <div class="row mb-4">
+                  <div class="col">
+                    <label for="disability" class="form-label">Disability?</label>
+                    <select class="form-select" id="disability" name="disability" required>
+                      <option value="">Choose...</option>
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                </div>
+              
+                <h2 class="mb-4">Application Information</h2>
+              
+                <div class="mb-3">
+                  <label class="form-label">Institution Choices</label>
+                  <select class="form-select mb-2" name="institution1" required>
+                    <option>University of Cape Town (UCT)</option>
+                    <option>University of the Witwatersrand (Wits)</option>
+                    <option>University of Pretoria (UP)</option>
+                    <option>Stellenbosch University (SU)</option>
+                    <option>University of KwaZulu-Natal (UKZN)</option>
+                    <option>University of Johannesburg (UJ)</option>
+                    <option>North-West University (NWU)</option>
+                    <option>Rhodes University</option>
+                    <option>University of the Western Cape (UWC)</option>
+                    <option>University of the Free State (UFS)</option>
+                    <option>Nelson Mandela University (NMU)</option>
+                    <option>University of Limpopo (UL)</option>
+                    <option>Walter Sisulu University (WSU)</option>
+                    <option>University of Venda (Univen)</option>
+                    <option>University of Fort Hare (UFH)</option>
+                    <option>Durban University of Technology (DUT)</option>
+                    <option>Cape Peninsula University of Technology (CPUT)</option>
+                    <option>Central University of Technology (CUT)</option>
+                    <option>Mangosuthu University of Technology (MUT)</option>
+                    <option>Vaal University of Technology (VUT)</option>
+                  </select>
+              
+                  <select class="form-select mb-2" name="institution2">
+                    <option>University of Cape Town (UCT)</option>
+                    <option>University of the Witwatersrand (Wits)</option>
+                    <option>University of Pretoria (UP)</option>
+                    <option>Stellenbosch University (SU)</option>
+                    <option>University of KwaZulu-Natal (UKZN)</option>
+                    <option>University of Johannesburg (UJ)</option>
+                    <option>North-West University (NWU)</option>
+                    <option>Rhodes University</option>
+                    <option>University of the Western Cape (UWC)</option>
+                    <option>University of the Free State (UFS)</option>
+                    <option>Nelson Mandela University (NMU)</option>
+                    <option>University of Limpopo (UL)</option>
+                    <option>Walter Sisulu University (WSU)</option>
+                    <option>University of Venda (Univen)</option>
+                    <option>University of Fort Hare (UFH)</option>
+                    <option>Durban University of Technology (DUT)</option>
+                    <option>Cape Peninsula University of Technology (CPUT)</option>
+                    <option>Central University of Technology (CUT)</option>
+                    <option>Mangosuthu University of Technology (MUT)</option>
+                    <option>Vaal University of Technology (VUT)</option>
+                  </select>
+              
+                  <select class="form-select" name="institution3">
+                    <option>University of Cape Town (UCT)</option>
+                    <option>University of the Witwatersrand (Wits)</option>
+                    <option>University of Pretoria (UP)</option>
+                    <option>Stellenbosch University (SU)</option>
+                    <option>University of KwaZulu-Natal (UKZN)</option>
+                    <option>University of Johannesburg (UJ)</option>
+                    <option>North-West University (NWU)</option>
+                    <option>Rhodes University</option>
+                    <option>University of the Western Cape (UWC)</option>
+                    <option>University of the Free State (UFS)</option>
+                    <option>Nelson Mandela University (NMU)</option>
+                    <option>University of Limpopo (UL)</option>
+                    <option>Walter Sisulu University (WSU)</option>
+                    <option>University of Venda (Univen)</option>
+                    <option>University of Fort Hare (UFH)</option>
+                    <option>Durban University of Technology (DUT)</option>
+                    <option>Cape Peninsula University of Technology (CPUT)</option>
+                    <option>Central University of Technology (CUT)</option>
+                    <option>Mangosuthu University of Technology (MUT)</option>
+                    <option>Vaal University of Technology (VUT)</option>
+                  </select>
+                </div>
+              
+                <div class="mb-3">
+                  <label class="form-label">Course Choices</label>
+                  <input type="text" class="form-control mb-2" name="course1" placeholder="First Course Choice" required>
+                  <input type="text" class="form-control mb-2" name="course2" placeholder="Second Course Choice">
+                  <input type="text" class="form-control" name="course3" placeholder="Third Course Choice">
+                </div>
+              
+                <h2 class="mb-4">Upload Documents</h2>
+              
+                <div class="mb-3">
+                  <label for="id_document" class="form-label">ID Document</label>
+                  <input type="file" class="form-control" id="id_document" name="id_document" required>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="cover_letter" class="form-label">Cover Letter (Optional)</label>
+                  <input type="file" class="form-control" id="cover_letter" name="cover_letter">
+                </div>
+              
+                <div class="mb-3">
+                  <label for="latest_report" class="form-label">Latest Report / Matric Certificate</label>
+                  <input type="file" class="form-control" id="latest_report" name="latest_report" required>
+                </div>
+              
+                <button type="submit" class="btn btn-success w-100">Submit Application</button>
+            </form>
+              
+        </div>
+        </div>
         <h3>Contact Information:</h3>
         <ul>
             <li><strong>Email:</strong> <a href="mailto:universityservices111@gmail.com">universityservices111@gmail.com</a></li>
