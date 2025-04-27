@@ -2,12 +2,24 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import firebase_admin
 from firebase_admin import credentials, firestore
 import os
+import json
+from dotenv import load_dotenv
+
+load_dotenv() 
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
 
-cred = credentials.Certificate(r"C:\Users\Tshepo\Downloads\Tshepo\Things\data\data.json")
-firebase_admin.initialize_app(cred)
+firebase_credentials = os.getenv('FIREBASE_CREDENTIALS')
+
+
+if firebase_credentials:
+    cred_dict = json.loads(firebase_credentials)
+    cred = credentials.Certificate(cred_dict)
+    firebase_admin.initialize_app(cred)
+else:
+    raise Exception("FIREBASE_CREDENTIALS environment variable not set!")
+
 db = firestore.client()
 
 
